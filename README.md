@@ -106,3 +106,6 @@ Nest is [MIT licensed](LICENSE).
   ### Others: 
     - Tests for the application has not been written as there was not enough time left to do so.
     - Brain-tree payments take too much time to get setteled even in the test mode, because of that we gotta wait for the payment to be settled before anyone test refund functionality on the Braintree.
+    - Backend is deployed on heroku and the url to access it is: https://stark-sea-18065.herokuapp.com/
+    - In the Braintree payments amount between 1-1999 is for succcessful payment, rest amounts will give various other scenerios, so we should stay inside this range.
+    - Adding any other test card may lead to to some unexpected behavior because it may not be listed as a valid card on both platforms. So please use only: 378282246310005 (With a 4 digit CVV)
