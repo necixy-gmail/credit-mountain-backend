@@ -234,6 +234,7 @@ export class AdminsService {
         userId,
         {},
         amount,
+        extra.description
       );
       status = transaction.transaction.status;
       success = transaction.success;
