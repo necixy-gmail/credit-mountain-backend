@@ -180,7 +180,7 @@ export class PaymentsService {
   }
 
   // Create Transaction ======================================
-  async braintreeCreateTransaction(userId, deviceData, amount) {
+  async braintreeCreateTransaction(userId, deviceData, amount, description) {
     const cust = await this.usersService.getLocalCust('Braintree', userId);
     const transaction = await braintreeGateway.transaction.sale({
       amount,
@@ -196,6 +196,7 @@ export class PaymentsService {
       gateway: 'Braintree',
       user: userId,
       meta: transaction.transaction,
+      description
     }).save();
 
     return transaction;
